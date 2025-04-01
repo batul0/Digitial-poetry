@@ -49,10 +49,10 @@ var n=0;
 var paths=0;
 var above='wax,pollen,shape,layer,the beekeeper,flower,field,drone'.split(',');
 var below='flow,honeycomb,shape,honey,flying,leg,wing,bee'.split(',');
-var trans='command,pace,roam,trail,frame,sweep,exercise,range'.split(',');
+var trans='command,pace,buzz,trail,swarm,sweep,fly,work'.split(',');
 var imper='fluttering,humming,hovering,buzzing,fly through,darting,swarm,enter';
 imper=imper.split(',');
-var intrans='linger,dwell,rest,relax,hold,dream,hum'.split(',');
+var intrans='hover,dwell,rest,relax,hold,dream,hum'.split(',');
 var s='s,'.split(',');
 var texture='smooth,fuzzy'.split(',');
 function rand_range(max) {
@@ -83,7 +83,7 @@ function site() {
  return words;
 }
 function cave() {
- var adjs=('encompassing,'+choose(texture)+',sinuous,straight,objective,arched,cool,clear,dim,driven').split(',');
+ var adjs=('surrounding,'+choose(texture)+',curved,straight,hive-bound,arched,cool,clear,rippled,diligent').split(',');
  var target=1+rand_range(3);
  while (adjs.length>target) {
   adjs.splice(rand_range(adjs.length),1);
@@ -125,21 +125,21 @@ function poem() {
  setInterval(do_line, 1200);
 }
 </script>
-  <title>Honeybees</title>
+  <title>The Bees</title>
 </head>
 <body onload="poem()">
 <div style="float:right; margin-top:12px; color:rgb(255, 201, 76); height:60pt">
-<div>HONEYBEE &middot; 2025-1-10</div>
-<del><a href="original.html">bumblebee</a></del><br/>
-<del><a href="tokyo_garage/">queen bee</a></del> <a href="http://retts.net/tokyogarage.html"></a><br/>
-<del><a href="gorge/">killer bee</a></del> <a href="http://luckysoap.com/generations/gorge.html"></a><br/>
-<del><a href="whisper_wire/">bee</a></del> <a href="http://luckysoap.com/generations/whisperwire.html"></a><br/>
-<del><a href="along_the_briny_beach/">wasp</a></del> <a href="http://luckysoap.com/alongthebrinybeach/"></a><br/>
-<del><a href="toy_garbage/">poppy bee</a></del> <a href="http://talanmemmott.info/ex/websupplement/toygarbage/index.html"></a><br/>
-<del><a href="yoko_engorged/">worker bee</a></del> <a href="http://exinfoam.wordpress.com/2011/07/18/yoko-engorged/"></a><br/>
-<del><a href="takei_george/">nectar bee</a></del> <a href="http://samplereality.com/elit/takeigeorge.html"></a><br/>
-<del><a href="alone_engaged/">flower bee</a></del> <a href="http://polyaesthetics.org/AloneEngaged.html"></a><br/>
-<del><a href="fred_and_george/">apis mellifera</a></del> <a href="http://www.madelineklink.com/portfolio/fredandgeorge.html"></a><br/>
+<div>HONEYBEE &middot; 2001-1-10</div>
+<del><a href="https://en.wikipedia.org/wiki/Bumblebee" target="_blank">bumblebee</a></del><br/>
+<del><a href="https://en.wikipedia.org/wiki/Queen_bee" target="_blank">queen bee</a></del><br/>
+<del><a href="https://en.wikipedia.org/wiki/Killer_bee" target="_blank">killer bee</a></del><br/>
+<del><a href="https://en.wikipedia.org/wiki/Bee" target="_blank">bee</a></del><br/>
+<del><a href="https://en.wikipedia.org/wiki/Wasp" target="_blank">wasp</a></del><br/>
+<del><a href="https://en.wikipedia.org/wiki/Megachile" target="_blank">poppy bee</a></del><br/>
+<del><a href="https://en.wikipedia.org/wiki/Worker_bee" target="_blank">worker bee</a></del><br/>
+<del><a href="https://en.wikipedia.org/wiki/Nectar" target="_blank">nectar bee</a></del><br/>
+<del><a href="https://en.wikipedia.org/wiki/Flower_bee" target="_blank">flower bee</a></del><br/>
+<del><a href="https://en.wikipedia.org/wiki/Apis_mellifera" target="_blank">apis mellifera</a></del><br/>
 </div>
 <div id="main"></div>
 </body>
