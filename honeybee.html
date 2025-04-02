@@ -30,16 +30,52 @@ IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 body {
  background: rgb(38, 37, 37);
  color: rgb(255, 201, 76);
+ text-shadow: 0 0 10px #FF5733, 0 0 20px #FF5733, 0 0 30px #FF5733;
  margin: 0 24pt 0 24pt;
  font-family: Optima, monospace;
  font-size: 16pt;
+ background-image: url("picture/cloud.gif"); 
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-position: center center;
 }
 div {
  height: 16pt;
 }
 a {
- color: rgb(236, 236, 236);
+ color: rgb(0, 0, 0);
  text-decoration: none;
+ 
+}
+#info-section {
+      float: right;
+      margin-top: 12px;
+      color: rgb(255, 201, 76);
+      height: 60pt;
+      z-index: 1000;
+      position: relative; 
+      padding-right: 15px; 
+      pointer-events: auto; 
+    }
+#main {
+      white-space: pre-line;
+      position: relative;
+      z-index: 10; 
+    }
+
+@keyframes fly {
+      0% { transform: translateX(0) translateY(0); }
+      25% { transform: translateX(300px) translateY(-150px); }
+      50% { transform: translateX(600px) translateY(0); }
+      75% { transform: translateX(900px) translateY(100px); }
+      100% { transform: translateX(1200px) translateY(-100px); }
+    }
+
+.bee {
+  position: absolute;
+  animation: fly 10s ease-in-out infinite;
+  z-index: 1;
+  transition: transform 0.1s ease-in-out;
 }
 /* ]]> */
 </style>
@@ -47,8 +83,8 @@ a {
 var t=0;
 var n=0;
 var paths=0;
-var above='wax,pollen,shape,layer,the beekeeper,flower,field,drone'.split(',');
-var below='flow,honeycomb,shape,honey,flying,leg,wing,bee'.split(',');
+var above='wax,pollen,honeybee,layer,the beekeeper,flower,field,human'.split(',');
+var below='flow,honeycomb,shape,honey,flying,worker,wing,bee'.split(',');
 var trans='command,pace,buzz,trail,swarm,sweep,fly,work'.split(',');
 var imper='fluttering,humming,hovering,buzzing,fly through,darting,swarm,enter';
 imper=imper.split(',');
@@ -83,7 +119,7 @@ function site() {
  return words;
 }
 function cave() {
- var adjs=('surrounding,'+choose(texture)+',curved,straight,hive-bound,arched,cool,clear,rippled,diligent').split(',');
+ var adjs=('surrounding,'+choose(texture)+',curved,straight,hive-bound,arched,cool,clear,rippled,pond').split(',');
  var target=1+rand_range(3);
  while (adjs.length>target) {
   adjs.splice(rand_range(adjs.length),1);
@@ -123,38 +159,41 @@ function do_line() {
 }
 
 
-//function playClickSound() {
-//  const clickAudio = document.getElementById("clickAudio");
-//  clickAudio.play();
-//}
 
 function poem() {
  setInterval(do_line, 1200);
 }
 
-window.onload = function() {
-    document.getElementById("my_audio").play();
-}
+function startAudio() {
+      var audio = document.getElementById('beeAudio');
+      audio.play();  
+    }
 
-//document.addEventListener("click", playClickSound);
+
 
 </script>
   <title>The Bees</title>
 </head>
-<body onload="poem()">
+<body onload="poem(); startAudio();">
 
-  <audio autoplay loop controls>
+  <img src="picture/bee.webp" class="bee" alt="flying bee">
 
-    <source src="sound/bee-buzz.mp3"> 
-   
+  <div style="text-align: center; display: inline-block; cursor: pointer;" onclick="startAudio()">
+    <img src="picture/mc-bee.jpg" alt="Play Bee Buzz" style="width: 100px; height: auto;">
+    <br>
+    <span style="font-size: 20px; font-weight: bold; color: rgb(255, 201, 76);">^Click Me^</span>
+  </div>
+  <!--<img src="picture/mc-bee.jpg" alt="click me" onclick="startAudio()" style="cursor: pointer;">-->
+
+  <audio id="beeAudio" autoplay loop hidden>
+    <source src="sound/bee-buzz.mp3" type="audio/mp3"> 
+    Your browser does not support the audio element.
   </audio>
   
 
   
-  
-  <!--<audio id="clickAudio" src="js.mp3" preload="auto"></audio>-->
 
-<div style="float:right; margin-top:12px; color:rgb(255, 201, 76); height:60pt">
+<div id="info-section"style="float:right; margin-top:12px; color:rgb(255, 201, 76); height:60pt">
 <div>HONEYBEE &middot; 2001-1-10</div>
 <del><a href="https://en.wikipedia.org/wiki/Bumblebee" target="_blank">bumblebee</a></del><br/>
 <del><a href="https://en.wikipedia.org/wiki/Queen_bee" target="_blank">queen bee</a></del><br/>
