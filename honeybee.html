@@ -51,7 +51,10 @@ a {
       float: right;
       margin-top: 12px;
       color: rgb(255, 201, 76);
+<<<<<<< HEAD
       
+=======
+>>>>>>> d8c1c5038bca850e4af049c2c6665968c8a045f8
       height: 60pt;
       z-index: 1000;
       position: relative; 
@@ -175,7 +178,7 @@ function startAudio() {
 </script>
   <title>The Bees</title>
 </head>
-<body onload="poem()">
+<body onload="poem(); startAudio();">
 
   <img src="picture/bee.webp" class="bee" alt="flying bee">
 
@@ -186,7 +189,11 @@ function startAudio() {
   </div>
   <!--<img src="picture/mc-bee.jpg" alt="click me" onclick="startAudio()" style="cursor: pointer;">-->
 
+<<<<<<< HEAD
   <audio id="beeAudio" loop hidden>
+=======
+  <audio id="beeAudio" autoplay loop hidden>
+>>>>>>> d8c1c5038bca850e4af049c2c6665968c8a045f8
     <source src="sound/bee-buzz.mp3" type="audio/mp3"> 
     Your browser does not support the audio element.
   </audio>
