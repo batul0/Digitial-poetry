@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital "Horror" Poem</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: white;
+      font-family: 'Courier New', Courier, monospace;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 85%;
+      max-width: 700px;
+      margin: 3rem auto;
+      text-align: left;
+    }
+
+    #text-output {
+      font-size: 1.5rem;
+      line-height: 1.4;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="text-output"></div>
+  </div>
+
+  <!-- Ambient Audio -->
+  <audio id="bg-audio" autoplay loop>
+    <source src="" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    const storyLines = [
+      "You wake up in a room with no doors.",
+      "The walls breathe. Not literally — but they feel alive.",
+      "The light overhead hums. Then cracks. Then fades.",
+      "You're not alone. You never are.",
+      "The silence is thick, like it's pressing against your chest.",
+      "A whisper slithers through the darkness: 'Still here?'",
+      "You try to answer, but your voice is buried under something heavy.",
+      "The air is cold. Not freezing — just numb.",
+      "You reach for a memory, any memory... but it's static.",
+      "Something stirs behind you.",
+      "You don’t turn around. You already know it’s there.",
+      "It’s always been there.",
+      "A shadow slips into your mind — soft, like a thought you didn’t invite.",
+      "'You weren’t meant to make it this far,' it says.",
+      "You feel your limbs pulling down, as if the floor wants you.",
+      "You blink. The room is smaller. Tighter. Heavier.",
+      "Familiar voices echo, warped and muffled: laughter turned to screams.",
+      "You clutch your chest, but the feeling won’t come back.",
+      "It crouches next to you now. It smells like yesterday.",
+      "You want to cry. You think you do. Maybe you already did.",
+      "It leans in, and with a breath like ice, it whispers:",
+      "'Let go.'",
+      "You close your eyes.",
+      "And for a moment... the weight is gone.",
+      "But the darkness is still there.",
+      "It always is."
+    ];
+
+    const output = document.getElementById("text-output");
+    let lineIndex = 0;
+    let charIndex = 0;
+
+    function typeLine() {
+      if (lineIndex >= storyLines.length) return;
+
+      const currentLine = storyLines[lineIndex];
+
+      if (charIndex < currentLine.length) {
+        output.innerHTML += currentLine.charAt(charIndex);
+        charIndex++;
+
+    
+        window.scrollTo(0, document.body.scrollHeight);
+
+        setTimeout(typeLine, 100);
+      } else {
+        output.innerHTML += "\n\n";
+        charIndex = 0;
+        lineIndex++;
+        setTimeout(typeLine, 2000);
+      }
+    }
+
+    window.onload = () => {
+      const audio = document.getElementById("bg-audio");
+      if (audio) {
+        audio.volume = 0.2;
+      }
+      typeLine();
+    };
+  </script>
+</body>
+</html>
+
