@@ -12,6 +12,9 @@
       color: white;
       font-family: 'Courier New', Courier, monospace;
       overflow-x: hidden;
+      background-image: url("picture/room.jpg");
+      height: 100%;
+     
     }
 
     .container {
@@ -123,7 +126,7 @@
 </head>
 <body>
 
-  <!-- FOG -->
+ 
   <div class="fogwrapper">
     <div id="foglayer_01" class="fog">
       <div class="image01"></div>
@@ -144,16 +147,14 @@
     <div id="text-output"></div>
   </div>
 
-  <!-- Jumpscare Image -->
+ 
   <img id="jumpscare" src="picture/jumpscare.jpg" alt="BOO!" />
 
-  <!-- Background Audio -->
+ 
   <audio id="bg-audio" autoplay loop>
     <source src="" type="audio/mpeg" />
-    Your browser does not support the audio element.
   </audio>
 
-  <!-- Typing + Jumpscare -->
   <script>
     const storyLines = [
       "You wake up in a room with no doors.",
