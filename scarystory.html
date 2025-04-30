@@ -13,7 +13,7 @@
       font-family: 'Courier New', Courier, monospace;
       overflow-x: hidden;
       background-image: url("picture/room.jpg");
-      height: 100%;
+      
      
     }
 
@@ -31,6 +31,7 @@
       line-height: 1.4;
       white-space: pre-wrap;
     }
+   
 
     .fogwrapper {
       position: fixed;
@@ -198,6 +199,7 @@
         output.innerHTML += currentLine.charAt(charIndex);
         charIndex++;
         window.scrollTo(0, document.body.scrollHeight);
+        //setInterval(function(scrollTo){ window.scrollBy(0,1000); }, 2000);
         setTimeout(typeLine, 100);
       } else {
         output.innerHTML += "\n\n";
@@ -223,7 +225,7 @@
         }, 200); 
       }, randomDelay);
     }
-
+    
     window.onload = () => {
       const audio = document.getElementById("bg-audio");
       if (audio) audio.volume = 0.2;
